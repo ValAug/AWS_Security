@@ -10,7 +10,9 @@ Please play fair and respect others.
 
 # Covid script and module. Deploys a small CI/CD to AWS.
 
-## Necessary packages to be install it
+## Necessary packages to be install it in your enviroment
+
+- create a virtual env
 
 - python3 -m pip install -U boto3
 - python3 -m pip install -U click
