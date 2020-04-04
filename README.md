@@ -8,6 +8,7 @@
 Please play fair and respect others.
 </code></pre>
 
+# Covid script and module. Deploys a small CI/CD to AWS.
 
 ## Necessary packages to be install it
 
