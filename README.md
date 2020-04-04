@@ -8,3 +8,9 @@
 Please play fair and respect others.
 </code></pre>
 
+
+## Necessary packages to be install it
+
+- python3 -m pip install -U boto3
+- python3 -m pip install -U click
+- - python3 -m pip install -U botostubs (still trying to make it work)
