@@ -3,6 +3,7 @@
 
 import boto3
 import click
+import botostubs
 
 #iam = boto3.client('iam')
 
