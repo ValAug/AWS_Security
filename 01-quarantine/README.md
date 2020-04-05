@@ -16,7 +16,7 @@ Please play fair and respect others.
 
 - python3 -m pip install -U boto3
 - python3 -m pip install -U click
-- - python3 -m pip install -U botostubs (still trying to make it work)
+- python3 -m pip install -U botostubs 
 
 # CLI command to run your code 
 
