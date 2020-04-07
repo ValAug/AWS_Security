@@ -12,12 +12,17 @@ Please play fair and respect others.
 
 ## Necessary packages to be install it in your enviroment
 
-- create a virtual env
+- Create a virtual env & Install 
 
-- python3 -m pip install -U boto3
-- python3 -m pip install -U click
-- python3 -m pip install -U botostubs 
+- python3 -m pip install -U Boto3
+- python3 -m pip install -U Click
+- python3 -m pip install -U Botostubs
+- python3 -m pip install -U Flake8
 
 # CLI command to run your code 
 
 - python3 covid.py --profile <use your profile name here> list-users
+- python3 covid.py --profile <use your profile name here> setup-user <New user name here>
+
+# Help options 
+- python3 covid.py --help 
