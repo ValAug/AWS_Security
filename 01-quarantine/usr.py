@@ -4,6 +4,7 @@
 import boto3
 import botostubs
 from botocore.exceptions import ClientError
+import click
 
 # iam = boto3.client('iam')
 
@@ -21,16 +22,24 @@ class IAMManager:
         return self.iam.list_users()
 
     def init_user(self, user_name):
-        """Create new IAM user, or Return existing one by name """
+        """Create new IAM user(Entity), or Return an Entity Already Exists"""
+
         iam_user = None
 
         try:
 
-            iam_user = self.iam.create_user(UserName=user_name)
+            return self.iam.create_user(UserName=user_name)
+            # iam_user = self.iam.create_user(UserName=user_name)
         
         except ClientError as error:
-            if error.response["Error"]["Code"] == "IAM user already exist":
-                iam_user = self.iam.create_user(user_name)
+            print(error)
+            raise click.Abort()
+
+        # except ClientError as error:
+        #     if error.response["Error"]["Code"] == "EntityAlreadyExists":
+        #         iam_user = self.iam.get_user(UserName=user_name)
+        #     else:
+        #         raise
         
         return iam_user
 
