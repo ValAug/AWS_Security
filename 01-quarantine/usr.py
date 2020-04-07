@@ -2,6 +2,8 @@
 """ Class for IAM resources """
 
 import boto3
+import botostubs
+from botocore.exceptions import ClientError
 
 # iam = boto3.client('iam')
 
@@ -18,7 +20,19 @@ class IAMManager:
         """Get IAM users list """
         return self.iam.list_users()
 
+    def init_user(self, user_name):
+        """Create new IAM user, or Return existing one by name """
+        iam_user = None
 
+        try:
+
+            iam_user = self.iam.create_user(UserName=user_name)
+        
+        except ClientError as error:
+            if error.response["Error"]["Code"] == "IAM user already exist":
+                iam_user = self.iam.create_user(user_name)
+        
+        return iam_user
 
 # for user in iam.list_users()['Users']:
 #     print("User: {0}\nUserID: {1}\nARN: {2}\nCreatedOn: {3}\n".format(
