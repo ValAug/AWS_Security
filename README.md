@@ -1,19 +1,16 @@
-# Name of the repo : AWS_Booster_Project_2020
-<ul>
-<li>
-  <p>Hello world  and welcome to this open park.</p>
-</ul>
-</li>
-<pre><code>
-Please play fair and respect others.
-</code></pre>
+# AWS_Booster_Project_2020
+
+Repository for enterprices that want to *Automate their AWS services deployment and administrate their users with Python*
 
 # Covid script and module. Deploys a small CI/CD to AWS.
 
+### Features
+*Covid currently has the following features:*
+
 - List IAM users
 - Creat new IAM user/users
--  Attach & detach IAM users policy/policies
--  Delete IAM user/users
+- Attach & detach IAM users policy/policies
+- Delete IAM user/users
 
 ## Necessary packages to be install it in your enviroment
 
