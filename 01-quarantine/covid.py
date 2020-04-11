@@ -45,15 +45,20 @@ def user_list():
 def setup_user(user_name):
     """Create and cofigurate a new IAM user."""
     iam_user = iam_manager.init_user(user_name)
+    
+
+# Attach a policy to an active user
+@cli.command('setup-policy')
+@click.argument('user_name')
+def setup_user(user_name):
+    """Create and cofigurate a new IAM user."""
+    iam_user = iam_manager.iam_policy(user_name)
+
 
     return
 
 
-# # attach a policy
-# iam.attach_user_policy(
-#  UserName = 'John', 
-#  PolicyArn='arn:aws:iam::aws:policy/AmazonEC2FullAccess'
-# )
+
 
 # print(user_list())
 
