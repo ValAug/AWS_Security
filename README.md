@@ -10,6 +10,11 @@ Please play fair and respect others.
 
 # Covid script and module. Deploys a small CI/CD to AWS.
 
+- List IAM users
+- Creat new IAM user/users
+-  Attach & detach IAM users policy/policies
+-  Delete IAM user/users
+
 ## Necessary packages to be install it in your enviroment
 
 - Create a virtual env & Install 
@@ -25,4 +30,5 @@ Please play fair and respect others.
 - python3 covid.py --profile <use your profile name here> setup-user <New user name here>
 
 # Help options 
-- python3 covid.py --help 
+- python3 covid.py --help
+- import IPython; IPython.embed()
