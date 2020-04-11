@@ -25,6 +25,7 @@ Repository for enterprices that want to *Automate their AWS services deployment 
 
 - python3 covid.py --profile <use your profile name here> list-users
 - python3 covid.py --profile <use your profile name here> setup-user <New user name here>
+- python3 covid.py --profile <use your profile name here> setup-policy <user name here>
 
 # Help options 
 - python3 covid.py --help
