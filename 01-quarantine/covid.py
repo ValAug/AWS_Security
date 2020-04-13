@@ -39,13 +39,43 @@ def user_list():
         )
     return
 
-# create a user
+# Create a user
 @cli.command('setup-user')
 @click.argument('user_name')
-def setup_user(user_name):
+def setup_user(user_name,):
     """Create and cofigurate a new IAM user."""
     iam_user = iam_manager.init_user(user_name)
-    
+
+
+# Create a new set of key
+@cli.command('setup-key')
+@click.argument('user_name')
+def access_key(user_name):
+   """Create new Access Keys"""
+   iam_user = iam_manager.new_keys(user_name)
+
+# List user Access Key
+@cli.command('list-key')
+@click.argument('user_name')
+def access_key(user_name):
+   """List all Access Keys"""
+   iam_user = iam_manager.list_acckeys(user_name)
+
+# Update keys status
+@cli.command('deactivate-key')
+@click.argument('key')
+@click.argument('user_name')
+def update_keys(key, user_name):
+    """Deactivate IAM user keys"""
+    iam_user = iam_manager.deactivate_keys(key, user_name)
+
+# Delete user keys 
+@cli.command('delete-key')
+@click.argument('key')
+@click.argument('user_name')
+def update_keys(key, user_name):
+    """Deactivate IAM user keys"""
+    iam_user = iam_manager.delete_acckeys(key, user_name)
 
 # Attach a policy to an active user
 @cli.command('setup-policy')
@@ -54,7 +84,11 @@ def setup_user(user_name):
     """Create and cofigurate a new IAM user."""
     iam_user = iam_manager.iam_policy(user_name)
 
-
+# List all users Polocies and ARNs
+@cli.command('list-policy-arn')
+def pol_arn():
+    """List all users Policies and ARNs details"""
+    iam_user = iam_manager.user_detail()
     return
 
 
