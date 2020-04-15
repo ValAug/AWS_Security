@@ -53,12 +53,14 @@ class IAMManager:
             print(error)
             raise click.Abort()
 
+
     def list_acckeys(self, user_name):
         """List IAM user Access Keys"""
         response = self.iam.list_access_keys(UserName=user_name)
         print(response)
         
     def deactivate_keys(self, key, user_name):
+        """Temporally deactivate Access Keys"""
         self.iam.update_access_key(AccessKeyId= key,
         Status='Inactive',
         UserName= user_name)
@@ -69,24 +71,34 @@ class IAMManager:
         print(response)
 
     def iam_policy(self, user_name):
-        """Set an IAM policy to be readable by everyone"""
+        """Attache an IAM policy readable by everyone"""
         return self.iam.attach_user_policy(
-            UserName = user_name,PolicyArn='arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess')
+            UserName = user_name,PolicyArn='arn:aws:iam::aws:policy/AmazonS3FullAccess')
 
-        return
 
-    def user_detail(self):
+    def user_pol(self):
         """List users Policy names and ARNs"""
-        for user_detail in self.iam.get_account_authorization_details(Filter=['User'])['UserDetailList']:policyname = [] 
-        policyarn = []
+        for user_detail in self.iam.get_account_authorization_details()['UserDetailList']:
+            policyname = []
+            policyarn = []
+        # find each policy attached to the user
+            for policy in user_detail['AttachedManagedPolicies']:
+                policyname.append(policy['PolicyName'])
+                policyarn.append(policy['PolicyArn'])
+        # print user details 
+            print("User: {0}\nUserID: {1}\nPolicyName: {2}\nPolicyARN: {3}\n".format(
+                user_detail['UserName'],
+                user_detail['UserId'],
+                policyname,
+                policyarn)
+            )
         
-        print(user_detail, '\n')
+    def detach_policy(self, policy, user_name):
+        return self.iam.detach_user_policy(UserName= user_name,PolicyArn= policy)
 
-        # except ClientError as error:
-        #     if error.response["Error"]["Code"] == "EntityAlreadyExists":
-        #         iam_user = self.iam.get_user(UserName=user_name)
-        #     else:
-        #         raise
+    def delete_user(self, user_name):
+        """Delete IAM user"""
+        return self.iam.delete_user(UserName= user_name)   
         
         
 
