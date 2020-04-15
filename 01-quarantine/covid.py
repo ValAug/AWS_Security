@@ -88,13 +88,29 @@ def setup_user(user_name):
 @cli.command('list-policy-arn')
 def pol_arn():
     """List all users Policies and ARNs details"""
-    iam_user = iam_manager.user_detail()
+    iam_user = iam_manager.user_pol()
+    return
+
+# Detach all users Polocies and ARNs
+@cli.command('detach-policy')
+@click.argument('user-name')
+@click.argument('policy')
+def pol_arn(policy, user_name):
+    """Detach user Policies"""
+    iam_user = iam_manager.detach_policy(policy, user_name)
+    return
+
+
+# Delete unnecesary IAM users
+@cli.command('delete-user')
+@click.argument('user_name')
+def delete_user(user_name):
+    """Delete specific IAM user"""
+    iam_user = iam_manager.delete_user(user_name)
     return
 
 
 
-
-# print(user_list())
 
 if __name__ == '__main__':
     cli()
