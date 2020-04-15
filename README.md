@@ -29,7 +29,9 @@ Repository for enterprices that want to *Automate their AWS services deployment 
 - python3 covid.py --profile <use your profile name here> deactivate-key <key here AKIAXXXXXXXXXX> <user name here>
 - python3 covid.py --profile <use your profile name here> delete-key <key here AKIAXXXXXXXXXX> <user name here>
 - python3 covid.py --profile <use your profile name here> setup-policy <user name here>
-- python3 covid.py --profile <use your profile name here> list-policy-arn <user name here>
+- python3 covid.py --profile <use your profile name here> list-policy-arn
+- python3 covid.py --profile <use your profile name here> detach-policy<user name here><arn:aws::::here>
+- python3 covid.py --profile <use your profile name here> delete-user<user name here>
 
 
 # Help options 
