@@ -102,3 +102,8 @@ class IAMManager:
         
         
 
+
+# paginator = my_iam_client.get_paginator('get_account_authorization_details')
+# for page in paginator.paginate(Filter=['User']):
+#   for user in page['UserDetailList']:
+#     # Do something with user struct
