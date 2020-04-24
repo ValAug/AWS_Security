@@ -1,6 +1,6 @@
 # AWS_Booster_Project_2020
 
-Repository for enterprices that want to *Automate their AWS services deployment and administrate their users with Python*
+*Automating AWS deployment with Python + Boto3*
 
 # Covid script and module. Deploys a small CI/CD to AWS.
 
