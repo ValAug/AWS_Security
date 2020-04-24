@@ -9,7 +9,10 @@ Repository for enterprices that want to *Automate their AWS services deployment 
 
 - List IAM users
 - Creat new IAM user/users
+- Create access key (Activate & Deactivate)
+- Delete access key
 - Attach & detach IAM users policy/policies
+- List policy/policies
 - Delete IAM user/users
 
 ## Necessary packages to be install it in your enviroment
