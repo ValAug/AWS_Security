@@ -5,7 +5,7 @@
 # Covid script and module. Deploys a small CI/CD to AWS.
 
 ### Features
-*Covid currently has the following features:*
+*Quarantine currently has the following features:*
 
 - List IAM users
 - Creat new IAM user/users
