@@ -1,9 +1,5 @@
 # AWS_Booster_Project_2020
 
-<p align="center">
-  <img src="<span>Photo by <a href="https://unsplash.com/@sebastiaanstam?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">sebastiaan stam</a> on <a href="https://unsplash.com/s/photos/security?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> " width="350" title="hover text">
-  <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
-</p>
 
 *Automating AWS deployment with Python + Boto3*
 
