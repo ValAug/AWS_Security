@@ -1,7 +1,5 @@
 # AWS_Booster_Project_2020
 
-![Alt text](/Users/katherinekruk/Desktop/security.jpg?raw=true "Title")
-
 *Automating AWS deployment with Python + Boto3*
 
 # Covid script and module. Deploys a small CI/CD to AWS.
