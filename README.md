@@ -1,6 +1,9 @@
 # AWS_Booster_Project_2020
 
 ![alt text](https://github.com/ValAug/AWS_Security/blob/master/security.jpg)
+
+#### Photo by sebastiaan stam
+
 *Automating AWS deployment with Python + Boto3*
 
 # Covid script and module. Deploys a small CI/CD to AWS.
