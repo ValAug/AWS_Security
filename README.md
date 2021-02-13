@@ -43,4 +43,4 @@
 
 # Help options 
 - python3 covid.py --help
-- import IPython; IPython.embed()
+
